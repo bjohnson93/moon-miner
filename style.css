@@ -1,0 +1,28 @@
+/* //make :hover pseudo class */
+
+body {
+  background-image: url('https://images.unsplash.com/photo-1608178398319-48f814d0750c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=879&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: fill;
+  object-position: center;
+}
+
+.center-image {
+  border-radius: 50%;
+  height: 50vh;
+}
+
+.moon-pic {
+  border-radius: 50%;
+  position: relative;
+  height: 51vh;
+  box-shadow: 10px 10px 5px yellow;
+}
+
+.moon-pic:hover {
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(.8);
+  transition: 1s ease;
+}
