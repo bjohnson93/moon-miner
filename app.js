@@ -47,7 +47,7 @@ function update() {
 }
 
 //SECTION - variables
-let cheese = 100000;
+let cheese = 500;
 
 //upgrades
 

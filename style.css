@@ -6,6 +6,24 @@ body {
   background-size: cover;
   object-fit: fill;
   object-position: center;
+  font-family: 'Roboto Mono', monospace;
+}
+
+h1 {
+  font-family: 'Tilt Prism', cursive;
+  text-shadow: 10px 10px 5px rgb(212, 212, 148);
+  font-size: 70px;
+}
+
+.text-boxes {
+  /* From https://css.glass */
+  background: rgba(231, 234, 115, 0.82);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(231, 234, 115, 0.3);
+
 }
 
 .center-image {
@@ -17,12 +35,12 @@ body {
   border-radius: 50%;
   position: relative;
   height: 51vh;
-  box-shadow: 10px 10px 5px yellow;
+  box-shadow: 10px 10px 5px rgb(212, 212, 148);
 }
 
 .moon-pic:hover {
-  -webkit-transform: scale(0.8);
-  -ms-transform: scale(0.8);
-  transform: scale(.8);
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
   transition: 1s ease;
 }
