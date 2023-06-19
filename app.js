@@ -25,22 +25,35 @@ const autoTotalElem = document.getElementById('auto-upgrades-total')
 
 //single responsibility function to update the DOM
 function update() {
+  // @ts-ignore
   cheeseTotalElem.innerText = cheese
 
+  // @ts-ignore
   pickaxePriceElem.innerText = clickUpgrades[0].price
+  // @ts-ignore
   pickaxeTotalElem.innerText = clickUpgrades[0].quantity
+  // @ts-ignore
   pickaxeMultiplierElem.innerText = clickUpgrades[0].multiplier
 
+  // @ts-ignore
   hammerPriceElem.innerText = clickUpgrades[1].price
+  // @ts-ignore
   hammerTotalElem.innerText = clickUpgrades[1].quantity
+  // @ts-ignore
   hammerMultiplierElem.innerText = clickUpgrades[1].multiplier
 
+  // @ts-ignore
   catPriceElem.innerText = automaticUpgrades[0].price
+  // @ts-ignore
   catTotalElem.innerText = automaticUpgrades[0].quantity
+  // @ts-ignore
   catMultiplierElem.innerText = automaticUpgrades[0].multiplier
 
+  // @ts-ignore
   puppyPriceElem.innerText = automaticUpgrades[1].price
+  // @ts-ignore
   puppyTotalElem.innerText = automaticUpgrades[1].quantity
+  // @ts-ignore
   puppyMultiplierElem.innerText = automaticUpgrades[1].multiplier
 
   drawTotalAutoUpgrades()
@@ -92,16 +105,17 @@ function mine() {
   //TODO - ✅have the function alert(cheese)
   //✅ window.alert('Yay! Your cheese total is up 🧀')
   clickUpgrades.forEach(c => {
+    // debugger
     if (c.quantity >= 1) {
-      cheese += (c.quantity * c.multiplier)
+      let addition = c.multiplier * c.quantity
+      cheese += addition
       // cheese += c.quantity
       // cheese += ((axe.quantity) * (axe.multiplier))
       // console.log('this is how much my cheese is decreasing', c.multiplier);
     }
-    drawTotalClickUpgrades()
-    update()
   })
-
+  drawTotalClickUpgrades()
+  update()
 }
 
 function mineAutoMagically() {
@@ -152,11 +166,16 @@ function mineAutoMagically() {
 function buyClickUpgrade(clickUpgradeName) {
   let click = clickUpgrades.find(c => c.name == clickUpgradeName)
 
+  // @ts-ignore
   if (cheese >= click.price) {
+    // @ts-ignore
     click.quantity++
+    // @ts-ignore
     cheese -= click.price
+    // @ts-ignore
     click.price += 50
-    click.multiplier++
+    // @ts-ignore
+    // click.multiplier++
   } else window.alert("You don't have enough cheese bud!")
 
   drawTotalClickUpgrades()
@@ -166,10 +185,14 @@ function buyClickUpgrade(clickUpgradeName) {
 function buyAutoUpgrade(autoUpgradeName) {
   let auto = automaticUpgrades.find(a => a.name == autoUpgradeName)
 
+  // @ts-ignore
   if (cheese >= auto.price) {
     console.log('you have enough cheese for a helpful animal');
+    // @ts-ignore
     auto.quantity++
+    // @ts-ignore
     cheese -= auto.price
+    // @ts-ignore
     auto.price += 100
     update()
     // cheese * auto.multiplier++
@@ -186,6 +209,7 @@ function drawTotalClickUpgrades() {
     upgrades += (c.quantity * c.multiplier)
     console.log(upgrades);
   })
+  // @ts-ignore
   clickTotalElem.innerHTML = upgrades
 }
 
@@ -196,6 +220,7 @@ function drawTotalAutoUpgrades() {
     upgrades += (a.quantity * a.multiplier)
   })
 
+  // @ts-ignore
   autoTotalElem.innerHTML = upgrades
 }
 
